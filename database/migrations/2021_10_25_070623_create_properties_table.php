@@ -22,7 +22,7 @@ class CreatePropertiesTable extends Migration
             $table->string("type");
             $table->string("bedrooms");
             $table->string("url");
-            $table->integer("bathrooms");
+            $table->string("bathrooms");
             $table->float("sqft",6,3);
             $table->integer("price");
             $table->string("brokerLogo");

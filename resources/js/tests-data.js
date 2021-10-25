@@ -8,19 +8,19 @@ myHeaders.append("Content-Type", "application/json");
 var raw = JSON.stringify([
   [
     {
-      "id": 2,
-      "page": "1",
-      "image": "https://www.propertyfinder.ae/property/74d6a269184b836df4d4dc9e4e479e61/260/185/MODE/9d1ec7/8334197-2abdeo.webp?ctr=ae",
-      "price": 3800000,
-      "title": "Luxury Furniture | Fully Upgraded | Sea Views",
-      "location": "Al Nabat, Shoreline Apartments, Palm Jumeirah, Dubai",
-      "type": "Apartment",
-      "bedrooms": "3",
-      "bathrooms": "4",
-      "sqft": 2.155,
-      "brokerLogo": "https://www.propertyfinder.ae/broker/11/178/98/MODE/a3588b/1783-logo.jpg?ctr=ae",
-      "url": "test"
-    }
+      "id": 20,
+      "page": "7",
+      "image": "https://www.propertyfinder.ae/property/74bcd4756bce05b946e444d72f5797ab/260/185/MODE/e804c7/8245755-cf508o.webp?ctr=ae",
+      "price": 14999999,
+      "title": "Landscaped 5BR Contemporary Prime Location",
+      "location": "District One Villas, District One, Mohammed Bin Rashid City, Dubai",
+      "type": "Villa",
+      "bedrooms": "5",
+      "bathrooms": "7+",
+      "sqft": "8,288 sqft",
+      "brokerLogo": "https://www.propertyfinder.ae/broker/12/178/98/MODE/432eeb/2260-logo.jpg?ctr=ae",
+      //"url":"url test"
+  }
   ],
   []
 ]);
