@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Property;
 
 class PropertyController extends Controller
 {
@@ -14,6 +15,7 @@ class PropertyController extends Controller
     public function index()
     {
         return 'index test!';
+        // return Property::all();
     }
 
     /**
@@ -33,8 +35,34 @@ class PropertyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        return $request;
+    {        
+        // for ($i=0;$i<$request[1];$i++){
+        //     // return sizeof($request[0]);
+        //     return $request[0][1]['image'];
+        //     // return $request[1];
+        //     // return sizeof($request[0]);
+        // return $request[0][0]['title'];
+        // }
+
+        
+        for ($i=0;$i<sizeof($request[0]);$i++){
+
+            Property::create([
+                'page'=>$request[0][$i]['page'], 
+                'image'=>$request[0][$i]['image'], 
+                'price'=>$request[0][$i]['price'], 
+                'title'=>$request[0][$i]['title'],
+                'url'=>$request[0][$i]['url'], 
+                'location'=>$request[0][$i]['location'], 
+                'type'=>$request[0][$i]['type'], 
+                'bedrooms'=>$request[0][$i]['bedrooms'], 
+                'bathrooms'=>$request[0][$i]['bathrooms'],
+                'sqft'=>$request[0][$i]['sqft'],
+                'brokerLogo'=>$request[0][$i]['brokerLogo']
+            ]);
+            // array_push($data_insertion, $data);
+        }
+
     }
 
     /**
