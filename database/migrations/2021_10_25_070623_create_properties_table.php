@@ -18,14 +18,14 @@ class CreatePropertiesTable extends Migration
             $table->string("title");
             $table->string("location");
             $table->integer("page");
-            $table->string("image");
+            $table->string("image")->nullable();
             $table->string("type");
             $table->string("bedrooms");
             $table->string("url");
             $table->string("bathrooms");
-            $table->float("sqft",6,3);
+            $table->integer("sqft");
             $table->integer("price");
-            $table->string("brokerLogo");
+            $table->string("brokerLogo")->nullable();
             $table->timestamps();
 
         });

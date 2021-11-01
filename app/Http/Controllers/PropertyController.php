@@ -52,7 +52,7 @@ class PropertyController extends Controller
                 'image'=>$request[0][$i]['image'], 
                 'price'=>$request[0][$i]['price'], 
                 'title'=>$request[0][$i]['title'],
-                'url'=>'url test',//$request[0][$i]['url'] 
+                'url'=>$request[0][$i]['url'],
                 'location'=>$request[0][$i]['location'], 
                 'type'=>$request[0][$i]['type'], 
                 'bedrooms'=>$request[0][$i]['bedrooms'], 
@@ -62,6 +62,7 @@ class PropertyController extends Controller
             ]);
             // array_push($data_insertion, $data);
         }
+        // return $request[0][4];
 
     }
 
