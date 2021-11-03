@@ -36,15 +36,9 @@ class PropertyController extends Controller
      */
     public function store(Request $request)
     {        
-        // for ($i=0;$i<$request[1];$i++){
-        //     // return sizeof($request[0]);
-        //     return $request[0][1]['image'];
-        //     // return $request[1];
-        //     // return sizeof($request[0]);
-        // return $request[0][0]['title'];
-        // }
 
-        
+        set_time_limit(0);
+
         for ($i=0;$i<sizeof($request[0]);$i++){
 
             Property::create([
@@ -60,9 +54,7 @@ class PropertyController extends Controller
                 'sqft'=>$request[0][$i]['sqft'],
                 'brokerLogo'=>$request[0][$i]['brokerLogo']
             ]);
-            // array_push($data_insertion, $data);
         }
-        // return $request[0][4];
 
     }
 
