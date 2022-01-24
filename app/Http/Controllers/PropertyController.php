@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Property;
+use App\Http\Controllers\Response;
 
 class PropertyController extends Controller
 {
@@ -38,10 +39,11 @@ class PropertyController extends Controller
     {        
 
         set_time_limit(0);
+        $properties=[];
 
         for ($i=0;$i<sizeof($request[0]);$i++){
 
-            Property::create([
+            $property=Property::create([
                 'page'=>$request[0][$i]['page'], 
                 'image'=>$request[0][$i]['image'], 
                 'price'=>$request[0][$i]['price'], 
@@ -54,8 +56,13 @@ class PropertyController extends Controller
                 'sqft'=>$request[0][$i]['sqft'],
                 'brokerLogo'=>$request[0][$i]['brokerLogo']
             ]);
+            array_push($properties,$property);
         }
-
+        
+        return response()->json([
+            'response' => 'Data inserted',
+            $properties
+        ]);
     }
 
     /**

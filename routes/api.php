@@ -20,3 +20,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::apiResource('property',PropertyController::class);
+
+Route::get('/test', function () {
+    return "hello";
+});
+
+
