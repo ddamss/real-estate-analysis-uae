@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Property;
 use App\Http\Controllers\Response;
+use Illuminate\Support\Facades\Log;
+
 
 class PropertyController extends Controller
 {
@@ -43,7 +45,7 @@ class PropertyController extends Controller
 
         for ($i=0;$i<sizeof($request[0]);$i++){
 
-            $property=Property::create([
+            $data=[
                 'page'=>$request[0][$i]['page'], 
                 'image'=>$request[0][$i]['image'], 
                 'price'=>$request[0][$i]['price'], 
@@ -55,14 +57,19 @@ class PropertyController extends Controller
                 'bathrooms'=>$request[0][$i]['bathrooms'],
                 'sqft'=>$request[0][$i]['sqft'],
                 'brokerLogo'=>$request[0][$i]['brokerLogo']
-            ]);
+            ];
+
+            $property=Property::create($data);
             array_push($properties,$property);
+            
+            Log::debug("data successfully inserted!");
+            Log::debug([$data]);
         }
-        
-        return response()->json([
-            'response' => 'Data inserted',
+
+
+        return response()->json(
             $properties
-        ]);
+        );
     }
 
     /**
